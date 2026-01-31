@@ -12,75 +12,116 @@
 </head>
 <body>
   <div class="landing">
-    <!-- Video Background -->
-    <div class="video-background" id="videoBg">
-      <video autoplay muted loop playsinline id="bgVideo">
-        <source src="assets/landing-bg.mp4" type="video/mp4">
-      </video>
-      <div class="fallback"></div>
-    </div>
 
-    <!-- Navigation -->
-    <nav class="nav">
-      <a href="about.html">About</a>
-      <a href="ai.html">AI Statement</a>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="main-content">
-      <div class="tagline">
-        <h2>What you hear depends on who you ask.</h2>
+    <!-- SECTION 1: Video Hero (Full Viewport) -->
+    <section class="hero-section">
+      <div class="video-background" id="videoBg">
+        <video autoplay muted loop playsinline id="bgVideo">
+          <source src="assets/landing-bg.mp4" type="video/mp4">
+        </video>
+        <div class="fallback"></div>
       </div>
 
-      <div class="experience-grid">
-        <!-- THE KNOCK - Live -->
-        <a href="the-knock.html" class="experience-card" data-experience="knock">
-          <span class="title">THE KNOCK</span>
-          <span class="description">Someone is at your door. The official story does not match what people whisper.</span>
-          <span class="status live">Live</span>
-        </a>
+      <!-- Navigation - floats on top -->
+      <nav class="nav">
+        <a href="about.html">About</a>
+        <a href="ai.html">AI Statement</a>
+      </nav>
 
-        <!-- THE CHAIR - Coming Soon -->
-        <a href="the-chair.html" class="experience-card" data-experience="chair">
-          <span class="title">THE CHAIR</span>
-          <span class="description">Everyone talks to their barber.</span>
-          <span class="status coming-soon">Coming Soon</span>
-        </a>
-
-        <!-- THE BOOTH - Coming Soon -->
-        <a href="the-booth.html" class="experience-card" data-experience="booth">
-          <span class="title">THE BOOTH</span>
-          <span class="description">Bless me, for I have...</span>
-          <span class="status coming-soon">Coming Soon</span>
-        </a>
-
-        <!-- THE FARE - Coming Soon -->
-        <a href="the-fare.html" class="experience-card" data-experience="fare">
-          <span class="title">THE FARE</span>
-          <span class="description">You picked someone up.</span>
-          <span class="status coming-soon">Coming Soon</span>
-        </a>
-
-        <!-- THE TRAIL - Coming Soon -->
-        <a href="the-trail.html" class="experience-card" data-experience="trail">
-          <span class="title">THE TRAIL</span>
-          <span class="description">They know you left the camera.</span>
-          <span class="status coming-soon">Coming Soon</span>
-        </a>
-
-        <!-- THE SESSION - Coming Soon -->
-        <a href="the-session.html" class="experience-card" data-experience="session">
-          <span class="title">THE SESSION</span>
-          <span class="description">Whatever Sammy gave you is kicking in.</span>
-          <span class="status coming-soon">Coming Soon</span>
-        </a>
+      <!-- Scroll indicator -->
+      <div class="scroll-hint">
+        <span>Explore</span>
+        <div class="scroll-arrow"></div>
       </div>
-    </main>
+    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>&copy; 2025 HEARSAY Experiences</p>
-    </footer>
+    <!-- SECTION 2: Experiences Grid -->
+    <section class="experiences-section" id="experiences">
+      <div class="experiences-container">
+        <h2 class="section-tagline">What you hear depends on who you ask.</h2>
+
+        <div class="experience-grid">
+          <!-- THE KNOCK - Live -->
+          <a href="the-knock.html" class="experience-card" data-experience="knock">
+            <div class="card-thumbnail">
+              <!-- GIF will go here: assets/thumbnails/knock.gif -->
+              <div class="thumbnail-placeholder"></div>
+            </div>
+            <div class="card-content">
+              <span class="title">THE KNOCK</span>
+              <span class="description">Someone is at your door. The official story does not match what people whisper.</span>
+              <span class="status live">Live</span>
+            </div>
+          </a>
+
+          <!-- THE CHAIR - Coming Soon -->
+          <a href="the-chair.html" class="experience-card" data-experience="chair">
+            <div class="card-thumbnail">
+              <div class="thumbnail-placeholder"></div>
+            </div>
+            <div class="card-content">
+              <span class="title">THE CHAIR</span>
+              <span class="description">Everyone talks to their barber.</span>
+              <span class="status coming-soon">Coming Soon</span>
+            </div>
+          </a>
+
+          <!-- THE BOOTH - Coming Soon -->
+          <a href="the-booth.html" class="experience-card" data-experience="booth">
+            <div class="card-thumbnail">
+              <div class="thumbnail-placeholder"></div>
+            </div>
+            <div class="card-content">
+              <span class="title">THE BOOTH</span>
+              <span class="description">Bless me, for I have...</span>
+              <span class="status coming-soon">Coming Soon</span>
+            </div>
+          </a>
+
+          <!-- THE FARE - Coming Soon -->
+          <a href="the-fare.html" class="experience-card" data-experience="fare">
+            <div class="card-thumbnail">
+              <div class="thumbnail-placeholder"></div>
+            </div>
+            <div class="card-content">
+              <span class="title">THE FARE</span>
+              <span class="description">You picked someone up.</span>
+              <span class="status coming-soon">Coming Soon</span>
+            </div>
+          </a>
+
+          <!-- THE TRAIL - Coming Soon -->
+          <a href="the-trail.html" class="experience-card" data-experience="trail">
+            <div class="card-thumbnail">
+              <div class="thumbnail-placeholder"></div>
+            </div>
+            <div class="card-content">
+              <span class="title">THE TRAIL</span>
+              <span class="description">They know you left the camera.</span>
+              <span class="status coming-soon">Coming Soon</span>
+            </div>
+          </a>
+
+          <!-- THE SESSION - Coming Soon -->
+          <a href="the-session.html" class="experience-card" data-experience="session">
+            <div class="card-thumbnail">
+              <div class="thumbnail-placeholder"></div>
+            </div>
+            <div class="card-content">
+              <span class="title">THE SESSION</span>
+              <span class="description">Whatever Sammy gave you is kicking in.</span>
+              <span class="status coming-soon">Coming Soon</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>&copy; 2025 HEARSAY Experiences</p>
+      </footer>
+    </section>
+
   </div>
 
   <script>
@@ -92,17 +133,21 @@
       videoBg.classList.add('no-video');
     });
 
-    // Also check if video can play
     video.addEventListener('canplay', function() {
       videoBg.classList.remove('no-video');
     });
 
-    // Fallback timeout - if video hasn't loaded in 5s, show fallback
+    // Fallback timeout
     setTimeout(function() {
       if (video.readyState < 3) {
         videoBg.classList.add('no-video');
       }
     }, 5000);
+
+    // Smooth scroll for the hint
+    document.querySelector('.scroll-hint').addEventListener('click', function() {
+      document.getElementById('experiences').scrollIntoView({ behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>
