@@ -1,0 +1,726 @@
+/* HEARSAY - Main Stylesheet */
+/* Theatrical, literary, strange. Not a SaaS landing page. */
+
+/* ============================================
+   FONTS
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap');
+
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
+:root {
+  /* Colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #3a3a3a;
+  --text-muted: #666666;
+  --accent-gold: #b8956c;
+  --accent-gold-hover: #9a7a58;
+  --bg-dark: #0a0a0a;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+
+  /* Experience-specific colors */
+  --knock-gold: #c9a85c;
+  --knock-red: #8b2635;
+  --chair-tungsten: #e8d4a8;
+  --chair-blue: #4a90a4;
+  --booth-wood: #4a3728;
+  --booth-candle: #d4a853;
+  --fare-night: #1a1a2e;
+  --fare-lights: #ff6b6b;
+  --trail-green: #2d4a2d;
+  --trail-glow: #7fff7f;
+  --session-shimmer: #9b59b6;
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 5rem;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   LANDING PAGE - VIDEO BACKGROUND
+   ============================================ */
+.landing {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-background .fallback {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 50%, #f0f0f0 100%);
+}
+
+/* Fallback when video fails */
+.video-background.no-video .fallback {
+  display: block;
+}
+
+.video-background.no-video video {
+  display: none;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav {
+  position: relative;
+  z-index: 10;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-md);
+}
+
+.nav a {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-primary);
+  padding: var(--space-xs) var(--space-sm);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  transition: background 0.2s ease, transform 0.2s ease;
+  text-shadow: none;
+}
+
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  position: relative;
+  z-index: 5;
+}
+
+/* ============================================
+   TAGLINE
+   ============================================ */
+.tagline {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  max-width: 600px;
+}
+
+.tagline h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.6);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+/* ============================================
+   EXPERIENCE GRID
+   ============================================ */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 960px;
+}
+
+.experience-card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: var(--space-md);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  background: var(--bg-card-hover);
+}
+
+.experience-card .title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.experience-card .description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.experience-card .status {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 3px;
+  margin-top: var(--space-xs);
+  width: fit-content;
+}
+
+.experience-card .status.live {
+  background: var(--knock-gold);
+  color: #fff;
+}
+
+.experience-card .status.coming-soon {
+  background: var(--text-muted);
+  color: #fff;
+}
+
+/* Visual hint stripe for each experience */
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 8px 8px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experience-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card:hover::before {
+  opacity: 1;
+}
+
+.experience-card[data-experience="knock"]::before { background: var(--knock-gold); }
+.experience-card[data-experience="chair"]::before { background: var(--chair-blue); }
+.experience-card[data-experience="booth"]::before { background: var(--booth-candle); }
+.experience-card[data-experience="fare"]::before { background: var(--fare-lights); }
+.experience-card[data-experience="trail"]::before { background: var(--trail-green); }
+.experience-card[data-experience="session"]::before { background: var(--session-shimmer); }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  position: relative;
+  z-index: 10;
+  padding: var(--space-md) var(--space-lg);
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 4px;
+}
+
+/* ============================================
+   EXPERIENCE PAGE LAYOUTS
+   ============================================ */
+.experience-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.experience-hero .backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.experience-hero .content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: var(--space-lg);
+  max-width: 700px;
+}
+
+.experience-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.experience-hero .premise {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-style: italic;
+  margin-bottom: var(--space-lg);
+  line-height: 1.6;
+}
+
+/* THE KNOCK - Specific Styles */
+.knock-page {
+  --page-bg: linear-gradient(135deg, #2a1810 0%, #1a0f0a 50%, #0f0805 100%);
+}
+
+.knock-page .experience-hero .backdrop {
+  background: var(--page-bg);
+}
+
+.knock-page .experience-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.6) 100%);
+  z-index: 1;
+}
+
+/* Peephole effect */
+.knock-page .experience-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center,
+    transparent 0%,
+    transparent 25%,
+    rgba(0,0,0,0.3) 35%,
+    rgba(0,0,0,0.7) 50%,
+    rgba(0,0,0,0.95) 70%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.knock-page .experience-hero h1 {
+  color: var(--knock-gold);
+}
+
+.knock-page .experience-hero .premise {
+  color: #e8d4b8;
+}
+
+/* THE CHAIR */
+.chair-page .experience-hero .backdrop {
+  background: linear-gradient(135deg, #3d3428 0%, #2a241c 50%, #1a1610 100%);
+}
+
+.chair-page .experience-hero h1 {
+  color: var(--chair-tungsten);
+}
+
+.chair-page .experience-hero .premise {
+  color: #d4c8b0;
+}
+
+/* THE BOOTH */
+.booth-page .experience-hero .backdrop {
+  background: linear-gradient(135deg, #2a1f18 0%, #1a1410 50%, #0a0805 100%);
+}
+
+.booth-page .experience-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 8px,
+      rgba(0,0,0,0.3) 8px,
+      rgba(0,0,0,0.3) 12px
+    );
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.booth-page .experience-hero h1 {
+  color: var(--booth-candle);
+}
+
+.booth-page .experience-hero .premise {
+  color: #c9b896;
+}
+
+/* THE FARE */
+.fare-page .experience-hero .backdrop {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+}
+
+.fare-page .experience-hero h1 {
+  color: #ff8a8a;
+}
+
+.fare-page .experience-hero .premise {
+  color: #a8c8e8;
+}
+
+/* THE TRAIL */
+.trail-page .experience-hero .backdrop {
+  background: linear-gradient(135deg, #0a1a0a 0%, #081408 50%, #050a05 100%);
+}
+
+.trail-page .experience-hero h1 {
+  color: var(--trail-glow);
+  text-shadow: 0 0 20px rgba(127, 255, 127, 0.5);
+}
+
+.trail-page .experience-hero .premise {
+  color: #8faf8f;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* Timestamp effect */
+.trail-page .experience-hero::before {
+  content: 'CAM 04  01.31.26  02:47:33';
+  position: absolute;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: rgba(127, 255, 127, 0.7);
+  z-index: 10;
+}
+
+/* THE SESSION */
+.session-page .experience-hero .backdrop {
+  background: linear-gradient(135deg, #1a1020 0%, #0f0a18 50%, #080510 100%);
+}
+
+.session-page .experience-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(155, 89, 182, 0.1) 0%,
+    transparent 50%
+  );
+  animation: shimmer 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.session-page .experience-hero h1 {
+  color: #d4a8e8;
+}
+
+.session-page .experience-hero .premise {
+  color: #b8a0c8;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--accent-gold);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(184, 149, 108, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: inherit;
+  border: 2px solid currentColor;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   EXPERIENCE PAGE BODY CONTENT
+   ============================================ */
+.experience-body {
+  flex: 1;
+  padding: var(--space-xl) var(--space-lg);
+  background: #fafafa;
+}
+
+.experience-body .container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   NOTIFY FORM
+   ============================================ */
+.notify-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--space-lg);
+  border-radius: 8px;
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
+.notify-form h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-bottom: var(--space-sm);
+}
+
+.notify-form .form-group {
+  display: flex;
+  gap: var(--space-xs);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.notify-form input[type="email"] {
+  flex: 1;
+  padding: var(--space-sm);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.notify-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+}
+
+/* ============================================
+   ABOUT & AI PAGES
+   ============================================ */
+.text-page {
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+.text-page .nav {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #eee;
+}
+
+.text-page .nav a {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.text-page .nav a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.text-page .nav .home-link {
+  margin-right: auto;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.text-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: var(--space-xxl) var(--space-lg);
+}
+
+.text-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+}
+
+.text-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.text-content p {
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+.text-content a {
+  color: var(--accent-gold-hover);
+  text-decoration: underline;
+}
+
+.text-content a:hover {
+  color: var(--text-primary);
+}
+
+/* ============================================
+   BACK LINK (Experience pages)
+   ============================================ */
+.back-link {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: 100;
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: var(--space-xs) var(--space-sm);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.back-link:hover {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .nav {
+    padding: var(--space-sm);
+    gap: var(--space-sm);
+  }
+
+  .nav a {
+    font-size: 0.8rem;
+    padding: var(--space-xs);
+  }
+
+  .main-content {
+    padding: var(--space-md);
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .experience-card {
+    padding: var(--space-sm);
+  }
+
+  .experience-hero {
+    height: 50vh;
+  }
+
+  .notify-form .form-group {
+    flex-direction: column;
+  }
+
+  .text-content {
+    padding: var(--space-xl) var(--space-md);
+  }
+}
+
+/* Mobile: Use static background instead of video */
+@media (max-width: 640px) {
+  .video-background video {
+    display: none;
+  }
+
+  .video-background .fallback {
+    display: block;
+  }
+}
