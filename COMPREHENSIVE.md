@@ -202,3 +202,26 @@ Simple static site:
 - Email signup integration (Formspree or Buttondown)
 - Replace generated assets with human artist work for commercial release
 - Corner decorative elements for landing page (user will provide)
+
+---
+
+## Ideas Bank (Future Experiences)
+
+Subtitle/premise ideas that haven't been assigned yet:
+
+| Subtitle | Potential Frame | Notes |
+|----------|-----------------|-------|
+| **Off the record** | Lawyer, journalist, source | Confidentiality, secrets, professional discretion |
+
+---
+
+## Current Subtitles (In Use)
+
+| Experience | Subtitle | Descriptor |
+|------------|----------|------------|
+| THE KNOCK | Stories through the door | Mystery · History · Hearsay |
+| THE CHAIR | Everyone tells their barber | Oral history as intimacy |
+| THE BOOTH | What weighs on you | Confession without absolution |
+| THE FARE | Where to? | Noir · Night shift · No destination |
+| THE TRAIL | Motion detected | Cryptid folklore · Found footage |
+| THE SESSION | It's kicking in | Chemically-assisted philosophy |
