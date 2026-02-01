@@ -84,7 +84,8 @@ body {
    ============================================ */
 .hero-section {
   position: relative;
-  height: 100vh;
+  height: 85vh;
+  min-height: 500px;
   width: 100%;
   overflow: hidden;
 }
@@ -154,7 +155,7 @@ body {
    ============================================ */
 .scroll-hint {
   position: absolute;
-  bottom: var(--space-lg);
+  bottom: var(--space-md);
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -243,7 +244,7 @@ body {
 .experiences-section {
   background: var(--bg-section);
   min-height: 100vh;
-  padding: var(--space-xxl) var(--space-lg);
+  padding: var(--space-lg) var(--space-lg) var(--space-xxl);
   display: flex;
   flex-direction: column;
 }
@@ -262,7 +263,7 @@ body {
   font-style: italic;
   color: var(--text-primary);
   text-align: center;
-  margin-bottom: var(--space-xxl);
+  margin-bottom: var(--space-xl);
   opacity: 0.9;
 }
 
