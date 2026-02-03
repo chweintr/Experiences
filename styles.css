@@ -385,6 +385,17 @@ body {
   color: var(--text-muted);
 }
 
+.experience-card .status.beta {
+  background: var(--knock-gold);
+  color: #fff;
+}
+
+.experience-card .access-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 /* Accent border on hover */
 .experience-card::after {
   content: '';
