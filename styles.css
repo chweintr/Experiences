@@ -128,10 +128,11 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 10;
+  z-index: 100;
   padding: var(--space-md) var(--space-lg);
   display: flex;
   gap: var(--space-md);
+  pointer-events: auto;
 }
 
 .nav a {
@@ -144,6 +145,8 @@ body {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 4px;
   transition: background 0.2s ease, transform 0.2s ease;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .nav a:hover {
@@ -290,6 +293,8 @@ body {
   flex-direction: column;
   border: 1px solid rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(8px);
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .experience-card:hover {
