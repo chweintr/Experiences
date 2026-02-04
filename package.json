@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "HEARSAY Experiences - Interactive fiction through voice",
   "scripts": {
-    "start": "npx serve -s . -l $PORT",
-    "dev": "npx serve -s . -l 3000"
+    "start": "npx serve . -l $PORT",
+    "dev": "npx serve . -l 3000"
   },
   "keywords": ["interactive-fiction", "voice", "narrative"],
   "author": "Caleb Weintraub",
