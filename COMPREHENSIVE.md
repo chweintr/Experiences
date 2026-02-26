@@ -49,6 +49,8 @@ HEARSAY is an interactive fiction platform where users have real-time voice conv
 
 **Creator:** Caleb Weintraub
 
+**Parent brand strategy doc:** `PASTPRESENCE_VISION_BUSINESS_MODEL.md`
+
 **Related ventures:**
 - `pastpresence.io` - Container brand for all interactive bot experiences (educational, games, art)
 - `hearsayexperiences.com` - This project's domain
